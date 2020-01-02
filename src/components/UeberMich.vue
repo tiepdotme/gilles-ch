@@ -1,0 +1,20 @@
+<template>
+  <div id="ueber-mich" class="ueber-mich">
+    <h2 v-html="titleH2" />
+    <h3 v-html="titleH3" />
+    <hr />
+  </div>
+</template>
+
+<script>
+export default {
+  name: "ueber-mich",
+  props: {
+    titleH2: String,
+    titleH3: String
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss"></style>

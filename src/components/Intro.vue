@@ -1,5 +1,8 @@
 <template>
-  <div class="intro">
+  <div id="intro" class="intro">
+    <h2 v-html="titleH2" />
+    <h3 v-html="titleH3" />
+    <hr />
     <h4>
       Willkommen bei Ihrem Partner für die Um&shy;setzung
       unter&shy;schied&shy;lichster Web&shy;lösungen. Für Agenturen als auch für
@@ -11,7 +14,11 @@
 
 <script>
 export default {
-  name: "Intro"
+  name: "Intro",
+  props: {
+    titleH2: String,
+    titleH3: String
+  }
 };
 </script>
 
