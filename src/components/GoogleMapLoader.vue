@@ -44,5 +44,7 @@ export default {
 .google-map {
   width: 100%;
   min-height: 400px;
+  height: 50vw;
+  max-height: 480px;
 }
 </style>

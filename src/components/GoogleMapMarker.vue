@@ -24,7 +24,8 @@ export default {
       position: this.marker.position,
       marker: this.marker,
       map: this.map,
-      icon: POINT_MARKER_ICON_CONFIG
+      icon: POINT_MARKER_ICON_CONFIG,
+      title: "Gilbert Nigg, Hardturmstrasse 66, 8005 Zürich"
     });
   },
 
