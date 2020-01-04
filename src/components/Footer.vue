@@ -12,6 +12,10 @@
       ><br />
       <a href="tel:+41433213744">+41 43 321 37 44</a>
     </div>
+    <p>
+      <a v-scroll-to="'#intro'">▲</a>
+    </p>
+
   </footer>
 </template>
 

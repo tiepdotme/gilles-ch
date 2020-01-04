@@ -16,7 +16,7 @@
     </p>
     <p>
       Für detaillierte Informationen oder spezifische Bedürfnisse, zögern Sie
-      nicht, mich zu <a href="#kontakt">kontaktieren</a>.
+      nicht, mich zu <a v-scroll-to="'#kontakt'">kontaktieren</a>.
     </p>
   </div>
 </template>

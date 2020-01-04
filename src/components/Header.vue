@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>
-      <a href="#intro" class="logo__link">
+      <a v-scroll-to="'#intro'" class="logo__link">
         <svg viewBox="0 0 60 60" version="1.1" role="img" class="logo__image">
           <title>Logo gilles.ch</title>
           <g>

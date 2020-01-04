@@ -1,11 +1,11 @@
 <template>
   <nav>
     <ul>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#kunden">Kunden</a></li>
-      <li><a href="#service">Service</a></li>
-      <li><a href="#ueber-mich">Über mich</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a v-scroll-to="'#portfolio'">Portfolio</a></li>
+      <li><a v-scroll-to="'#kunden'">Kunden</a></li>
+      <li><a v-scroll-to="'#service'">Service</a></li>
+      <li><a v-scroll-to="'#ueber-mich'">Über mich</a></li>
+      <li><a v-scroll-to="'#kontakt'">Kontakt</a></li>
     </ul>
   </nav>
 </template>
