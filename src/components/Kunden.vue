@@ -1,8 +1,9 @@
 <template>
   <div id="kunden" class="kunden">
-    <h2 v-html="titleH2" />
-    <h3 v-html="titleH3" />
+    <h2 v-html="heading.title" />
+    <h3 v-html="heading.subTitle" />
     <hr />
+    [...]
   </div>
 </template>
 
@@ -10,8 +11,7 @@
 export default {
   name: "Kunden",
   props: {
-    titleH2: String,
-    titleH3: String
+    heading: Object
   }
 };
 </script>

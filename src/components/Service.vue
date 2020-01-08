@@ -1,7 +1,7 @@
 <template>
   <div id="service" class="service">
-    <h2 v-html="titleH2" />
-    <h3 v-html="titleH3" />
+    <h2 v-html="heading.title" />
+    <h3 v-html="heading.subTitle" />
     <hr />
     <p>
       Bei vielen Projekten, die an mich herangetragen werden, geht es um die
@@ -25,8 +25,7 @@
 export default {
   name: "Service",
   props: {
-    titleH2: String,
-    titleH3: String
+    heading: Object
   }
 };
 </script>

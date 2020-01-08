@@ -1,7 +1,7 @@
 <template>
   <div id="kontakt" class="kontakt">
-    <h2 v-html="titleH2" />
-    <h3 v-html="titleH3" />
+    <h2 v-html="heading.title" />
+    <h3 v-html="heading.subTitle" />
     <hr />
     <GoogleMapLoader
       :mapConfig="mapConfig"
@@ -28,8 +28,7 @@ import { mapSettings } from "@/constants/mapSettings";
 export default {
   name: "Kontakt",
   props: {
-    titleH2: String,
-    titleH3: String
+    heading: Object
   },
 
   components: {

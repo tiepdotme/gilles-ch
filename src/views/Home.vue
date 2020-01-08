@@ -1,19 +1,21 @@
 <template>
   <div class="home">
-    <Header />
-    <Nav />
-    <Intro titleH2="Gilbert Nigg" titleH3="Web Developer" />
-    <Portfolio titleH2="Arbeiten" titleH3="Auszug aus meinem Portfolio" />
-    <Kunden titleH2="Kunden" titleH3="Auszug aus der Kundenliste" />
-    <Service titleH2="Service" titleH3="Was ich anbiete" />
-    <UeberMich titleH2="Über mich" titleH3="Web Developer aus Leidenschaft" />
-    <Kontakt titleH2="Kontakt" titleH3="Infos und Wegbeschreibung" />
+    <Header :heading="heading" />
+    <Nav @changeHeadingParent="setHeading" />
+    <Intro :heading="headingsConst.intro" />
+    <Portfolio :heading="headingsConst.portfolio" />
+    <Kunden :heading="headingsConst.kunden" />
+    <Service :heading="headingsConst.service" />
+    <UeberMich :heading="headingsConst.ueberMich" />
+    <Kontakt :heading="headingsConst.kontakt" />
     <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import { HEADINGS } from "@/constants/headingSettings";
+
 import Header from "@/components/Header.vue";
 import Nav from "@/components/Nav.vue";
 import Intro from "@/components/Intro.vue";
@@ -36,6 +38,18 @@ export default {
     UeberMich,
     Kontakt,
     Footer
+  },
+
+  data() {
+    return {
+      heading: HEADINGS.intro,
+      headingsConst: HEADINGS
+    };
+  },
+  methods: {
+    setHeading(_heading) {
+      this.heading = _heading;
+    }
   }
 };
 </script>

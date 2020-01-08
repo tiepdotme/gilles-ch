@@ -1,7 +1,7 @@
 <template>
   <div id="ueber-mich" class="ueber-mich">
-    <h2 v-html="titleH2" />
-    <h3 v-html="titleH3" />
+    <h2 v-html="heading.title" />
+    <h3 v-html="heading.subTitle" />
     <hr />
     <p>
       Anfangs 2002 habe ich begonnen, als selbständiger Web Developer meine
@@ -22,8 +22,7 @@
 export default {
   name: "ueber-mich",
   props: {
-    titleH2: String,
-    titleH3: String
+    heading: Object
   }
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div id="intro" class="intro">
-    <h2 v-html="titleH2" />
-    <h3 v-html="titleH3" />
+    <h2 v-html="heading.title" />
+    <h3 v-html="heading.subTitle" />
     <hr />
     <h4>
       Willkommen bei Ihrem Partner für die Um&shy;setzung
@@ -16,8 +16,7 @@
 export default {
   name: "Intro",
   props: {
-    titleH2: String,
-    titleH3: String
+    heading: Object
   }
 };
 </script>
