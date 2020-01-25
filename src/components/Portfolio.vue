@@ -3,7 +3,16 @@
     <h2 v-html="heading.title" />
     <h3 v-html="heading.subTitle" />
     <hr />
-    [...]
+    <ul v-if="Object.keys(projekte).length">
+      <li v-for="projekt in projekte" :key="projekt.id">
+        <img :src="projekt.bildKlein" :alt="projekt.titel" /><br />
+        {{ projekt.titel }}<br />
+        {{ projekt.typ }} {{ projekt.datum }}
+      </li>
+    </ul>
+    <p v-else>
+      Lade Projekte...
+    </p>
   </div>
 </template>
 
@@ -12,6 +21,16 @@ export default {
   name: "Portfolio",
   props: {
     heading: Object
+  },
+  data() {
+    return {
+      projekte: {}
+    };
+  },
+  mounted() {
+    fetch("https://www.gilles.ch/portfolio/index.json")
+      .then(response => response.json())
+      .then(data => (this.projekte = data));
   }
 };
 </script>
