@@ -18,12 +18,17 @@
       Für detaillierte Informationen oder spezifische Bedürfnisse, zögern Sie
       nicht, mich zu <a v-scroll-to="'#kontakt'">kontaktieren</a>.
     </p>
+    <Leistungen />
   </div>
 </template>
 
 <script>
+import Leistungen from "@/components/Leistungen.vue";
 export default {
   name: "Service",
+  components: {
+    Leistungen
+  },
   props: {
     heading: Object
   }
