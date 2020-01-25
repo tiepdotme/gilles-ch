@@ -39,7 +39,6 @@ export default {
     Kontakt,
     Footer
   },
-
   data() {
     return {
       heading: HEADINGS.intro,

@@ -15,7 +15,6 @@
     <p>
       <a v-scroll-to="'#intro'">▲</a>
     </p>
-
   </footer>
 </template>
 
