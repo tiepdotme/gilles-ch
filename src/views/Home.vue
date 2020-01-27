@@ -2,6 +2,7 @@
   <div class="home">
     <Header :heading="heading" />
     <Nav @changeHeadingParent="setHeading" />
+    <router-view />
     <Intro :heading="headingsConst.intro" />
     <Portfolio :heading="headingsConst.portfolio" />
     <Kunden :heading="headingsConst.kunden" />

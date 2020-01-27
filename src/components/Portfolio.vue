@@ -5,9 +5,19 @@
     <hr />
     <ul v-if="Object.keys(projekte).length">
       <li v-for="projekt in projekte" :key="projekt.id">
-        <img :src="projekt.bildKlein" :alt="projekt.titel" /><br />
-        {{ projekt.titel }}<br />
-        {{ projekt.typ }} {{ projekt.datum }}
+        <router-link
+          :to="{
+            name: 'projekt',
+            params: {
+              id: projekt.id,
+              slug: projekt.slug
+            }
+          }"
+        >
+          <img :src="projekt.bildKlein" :alt="projekt.titel" /><br />
+          {{ projekt.titel }}<br />
+          {{ projekt.typ }} {{ projekt.datum }}
+        </router-link>
       </li>
     </ul>
     <p v-else>
