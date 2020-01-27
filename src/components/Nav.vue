@@ -27,13 +27,27 @@ export default {
   data() {
     return {
       yPos: 0,
+      lastScrollY: 0,
       heading: HEADINGS.intro,
       lastHeading: HEADINGS.intro
     };
   },
+  watch: {
+    $route(to, from) {
+      if (from.name === "home" && to.name === "projekt") {
+        window.removeEventListener("scroll", this.handleScroll);
+      } else if (from.name === "projekt" && to.name === "home") {
+        // jump to stored scroll-position
+        window.scrollTo(0, this.lastScrollY);
+        window.addEventListener("scroll", this.handleScroll);
+      }
+    }
+  },
   methods: {
     handleScroll() {
       this.yPos = window.scrollY + 20;
+      // store scroll-position
+      this.lastScrollY = window.scrollY;
       if (this.yPos >= document.getElementById("kontakt").offsetTop) {
         this.heading = HEADINGS.kontakt;
       } else if (this.yPos >= document.getElementById("ueber-mich").offsetTop) {

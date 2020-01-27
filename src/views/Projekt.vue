@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="projekt">
     <p>
       Projekt.vue
     </p>
@@ -12,3 +12,15 @@
     </p>
   </div>
 </template>
+
+<style scoped lang="scss">
+.projekt {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+</style>

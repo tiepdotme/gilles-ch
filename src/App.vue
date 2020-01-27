@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <keep-alive include="home">
-      <router-view />
-    </keep-alive>
+    <transition name="fade">
+      <keep-alive include="home">
+        <router-view />
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -21,5 +23,13 @@
   h2 {
     font-size: 2rem;
   }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
