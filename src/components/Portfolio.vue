@@ -10,7 +10,11 @@
             name: 'projekt',
             params: {
               id: projekt.id,
-              slug: projekt.slug
+              slug: projekt.slug,
+              headingAssigned: {
+                title: projekt.titel,
+                subTitle: projekt.typ + ' ' + projekt.datum
+              }
             }
           }"
         >

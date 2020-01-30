@@ -14,7 +14,8 @@ const routes = [
   {
     path: "/portfolio/:id/:slug",
     name: "projekt",
-    component: Projekt
+    component: Projekt,
+    props: true
   },
   {
     path: "/about",
