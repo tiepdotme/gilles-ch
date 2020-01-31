@@ -1,22 +1,45 @@
 <template>
   <div class="projekt">
     <Header v-if="headingComputed" :heading="headingComputed" />
-    <p>
-      Projekt.vue
-    </p>
-    <ul>
-      <li>ID: {{ this.$route.params.id }}</li>
-      <li>SLUG: {{ this.$route.params.slug }}</li>
-    </ul>
     <div v-if="Object.keys(projekt).length">
-      <div v-html="this.projekt.beschrieb" />
+      <h2 v-html="this.heading.title" />
+      <h3 v-html="this.heading.subTitle" />
+      <hr />
+      <p>
+        <img
+          :src="this.projekt.bild"
+          :alt="this.projekt.titel"
+          @load="onImgLoad"
+          v-bind:class="{ loaded: this.imgIsLoaded ? 1 : 0 }"
+        />
+      </p>
+      <p v-html="this.projekt.beschrieb" />
+      <p v-if="this.projekt.kunde">Kunde: {{ this.projekt.kunde }}</p>
+      <p v-if="this.projekt.url">
+        Website <br />
+        <a
+          :href="this.projekt.url"
+          v-html="this.projekt.url"
+          target="_blank"
+          rel="noopener"
+        />
+      </p>
+      <div v-if="projekt.tags">
+        Leistungen
+        <ul>
+          <li v-for="tag in projekt.tags" :key="tag.id">
+            {{ tag.name }}
+          </li>
+        </ul>
+      </div>
+      <p v-if="this.projekt.partner" v-html="this.projekt.partner" />
+      <p>
+        <router-link to="/">Projekt schliessen</router-link>
+      </p>
     </div>
     <div v-else>
       Lade Projekt...
     </div>
-    <p>
-      <router-link to="/">Projekt schliessen</router-link>
-    </p>
   </div>
 </template>
 
@@ -44,8 +67,14 @@ export default {
   data() {
     return {
       projekt: {},
+      imgIsLoaded: false,
       loaded: false
     };
+  },
+  methods: {
+    onImgLoad() {
+      this.imgIsLoaded = true;
+    }
   },
   async mounted() {
     fetch(
